@@ -1,0 +1,15 @@
+main.pdf
+appendix.pdf
+main.log
+main.aux
+main.bbl
+main.blg
+
+*.sublime-*
+*.kate-swp
+*~
+*.fls
+*.fdb_latexmk
+*.aux
+*.log
+

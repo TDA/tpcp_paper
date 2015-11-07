@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage{vmargin}
+\usepackage{times}
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath}
+\usepackage{cite}
+\usepackage{titling}
+\usepackage{color}
+
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+
+\begin{document}
+
+\title{Executive Summary: Total Platform Cyber Protection}
+\date{}
+
+\maketitle
+
+Traditional security defenses for the computing environment have
+focused on security the \emph{border} of the network, as this is the
+entry place for most attackers. However, even with sophisticated
+border technologies in place, there are will a rash of security
+breaches and data compromises. The goal of this work is to survey the
+state of security for the entire computing platform, in order to
+identify areas that require additional research.
+
+In this work, we analyzed the security research done at the following
+layers of the computing platform: hardware, firmware, bus, hypervisor,
+operating system, application, network, and user layer.
+
+At the hardware level, the threat is Trojan logic introduced during
+design or manufacturing process. While much work has focused on
+detecting Trojans using side-channel analysis, we believe that there
+exists opportunity for developing the upper layers of the software to
+mitigate the problem (assume untrusted hardware), detecting exploits
+that utilize the Trojan, and to improve the detection process, both
+before and after hardware is fabricated.
+
+At the firmware level, the threat is that firmware has a high
+privilege level and is opaque code that can easily hide a Trojan or a
+vulnerability. We believe that more research is necessary on
+automating the analysis of firmware, including reverse engineering,
+transforming firmware, and increasing analysis to support the
+concurrent and real-time requirements.
+
+At the bus/interconnect layer, the threat is that any device attached
+to the bus can communicate or impersonate any other device on the bus.
+While current approaches focus on application-specific monitoring, we
+believe that there must be more research on application-agnostic
+monitoring, runtime bus filtering/policy enforcement, and device
+authentication.
+
+At the hypervisor layer, the threat is that vulnerabilities in the
+hypervisor itself can allow a malicious or compromised guest operating
+system to exploit the hypervisor and migrate to other guest operating
+systems. While much research has been done on this layer, we believe
+that there exists significant opportunity to automatically reduce the
+attack surface of the hypervisor, increasing assurance of the
+hypervisor, and verifying the hypervisor implementation.
+
+At the operating system layer, the issue is that malicious application
+can target the operating system to exploit vulnerabilities.
+
+
+\end{document}
