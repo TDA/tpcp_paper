@@ -242,7 +242,7 @@ this increases the cost and complexity of implemented JTAG.
 
 Another approach is to change the design of the chip to support
 runtime monitoring~\cite{Waksman2010}. In this way, the hardware
-itself is is monitoring itself, rather than external analysis of
+itself is monitoring itself, rather than external analysis of
 side-channels. However, this has all the same drawbacks of changing
 the design of hardware, in addition to not being robust in the face of
 a powerful attacker who is able to alter the design. 
@@ -359,7 +359,7 @@ remotely controlled or accessed. This is similar to a vulnerability,
 in that an attacker is able to control the firmware, however the key
 difference lies in the fact that Trojan behavior will be intentionally
 obfuscated by an attacker, whereas a vulnerability is accidentally
-introduced by a benign developer. Therefore, Trojan behavior is more
+introduced by a benign developer. Therefore, Trojan behavior is 
 more difficult to detect, because there is an active adversary who is
 intentionally obfuscating the behavior. 
 
@@ -385,7 +385,7 @@ firmware~\cite{Adelstein2002, Zhou2007, Zhou2009}. This protects from
 the threat of tampering or altering the firmware, however it does not
 address vulnerable firmware. 
 
-Another approach has been to include run-time monitoring into the
+Another approach has been to include runtime monitoring into the
 firmware, so that compromises can be detected~\cite{Cui2010a,
   Cui2011}. This approach is further complicated by the lack of
 abstractions in the firmware environment. 
@@ -922,9 +922,9 @@ increases in vulnerabilities.
 
 \subsection{Research}
 
-Security of the application lays has received significant attention
+Security of the application layer has received significant attention
 from the research community. Because of this, we have divided the
-research into attack surface reduction, prevent control-flow
+research into the following categories: attack surface reduction, prevent control-flow
 hijacking, logic and implementation flaws, mitigation and recovery,
 modeling and monitoring execution, and protection against malicious
 code.
@@ -971,7 +971,7 @@ successfully hijacking the control-flow of the application. In this
 way, this line of research can be seen as a mitigation technique.
 
 Significant progress in this area started with the idea of
-control-flow integrity, essentially ensuring dynamically at run-time
+control-flow integrity, essentially ensuring dynamically at runtime
 that the control-flow of the application does not
 deviate~\cite{Abadi2005, Abadi2009}. The first implementations were
 deemed infeasible, so later research attempted to improve the
