@@ -4430,3 +4430,171 @@ year = {2015}
 	year={1999},
 	organization={Springer}
 }
+@article{Afonso2016,
+abstract = {—Current static analysis techniques for Android ap-plications operate at the Java level—that is, they analyze either the Java source code or the Dalvik bytecode. However, Android allows developers to write code in C or C++ that is cross-compiled to multiple binary architectures. Furthermore, the Java-written components and the native code components (C or C++) can interact. Native code can access all of the Android APIs that the Java code can access, as well as alter the Dalvik Virtual Machine, thus rendering static analysis techniques for Java unsound or misleading. In addition, malicious apps frequently hide their malicious functionality in native code or use native code to launch kernel exploits. It is because of these security concerns that previous research has proposed native code sandboxing, as well as mechanisms to enforce security policies in the sandbox. However, it is not clear whether the large-scale adoption of these mechanisms is practical: is it possible to define a meaningful security policy that can be imposed by a native code sandbox without breaking app functionality? In this paper, we perform an extensive analysis of the native code usage in 1.2 million Android apps. We first used static analysis to identify a set of 446k apps potentially using native code, and we then analyzed this set using dynamic analysis. This analysis demonstrates that sandboxing native code with no permissions is not ideal, as apps' native code components perform activities that require Android permissions. However, our analysis provided very encouraging insights that make us believe that sandboxing native code can be feasible and useful in practice. In fact, it was possible to automatically generate a native code sandboxing policy, which is derived from our analysis, that limits many malicious behaviors while still allowing the correct execution of the behavior witnessed during dynamic analysis for 99.77{\%} of the benign apps in our dataset. The usage of our system to generate policies would reduce the attack surface available to native code and, as a further benefit, it would also enable more reliable static analysis of Java code.},
+author = {Afonso, Vitor and Bianchi, Antonio and Fratantonio, Yanick and Doup{\'{e}}, Adam and Polino, Mario and de Geus, Paulo and Kruegel, Christopher and Vigna, Giovanni and {Santa Barbara}, Uc},
+doi = {10.14722/ndss.2016.23384},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/going-native-ndss2016.pdf:pdf},
+isbn = {189156241X},
+journal = {Proceedings of the ISOC Network and Distributed System Security Symposium (NDSS)},
+pages = {1--15},
+title = {{Going Native: Using a Large-Scale Analysis of Android Apps to Create a Practical Native-Code Sandboxing Policy}},
+year = {2016}
+}
+@article{Ansel,
+author = {Ansel, Jason and Marchenko, Petr and Taylor, Elijah and Chen, Brad and Schuff, Derek L and Sehr, David and Biffle, Cliff L and Yee, Bennet},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/Language-Independent Sandboxing of Just-In-Time Comilation and Self-Modifying Code.pdf:pdf},
+isbn = {9781450306638},
+keywords = {just-in-time compilation,modifying code,sandboxing,security,self-,software fault isolation},
+title = {{Language-Independent Sandboxing of Just-In-Time Compilation and Self-Modifying Code}}
+}
+@article{Douceur2008,
+abstract = {Xax is a browser plugin model that enables developers to leverage existing tools, libraries, and entire programs to deliver feature-rich applications on the web. Xax employs a novel combination of mechanisms that collectively provide security, OS-independence, performance, and support for legacy code. These mechanisms include memory-isolated native code execution behind a narrow syscall interface, an abstraction layer that provides a consistent binary interface across operating systems, system services via hooks to existing browser mechanisms, and lightweight modifications to existing tool chains and code bases. We demonstrate a variety of applications and libraries from existing code bases, in several languages, produced with various tool chains, running in multiple browsers on multiple operating systems. With roughly two person-weeks of effort, we ported 3.3 million lines of code to Xax, including a PDF viewer, a Python interpreter, a speech synthesizer, and an OpenGL pipeline.},
+author = {Douceur, J and Elson, Jeremy and Howell, Jon and Lorch, Jacob R.},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/Leveraging Legacy Code to Deploy Desktop Applications on the Web.pdf:pdf},
+journal = {OSDI'08 Proceedings of the 8th USENIX conference on Operating systems design and implementation},
+pages = {339--354},
+title = {{Leveraging Legacy Code to Deploy Desktop Applications on the Web}},
+url = {http://research.microsoft.com/pubs/72878/xax-osdi08.pdf},
+year = {2008}
+}
+@article{Ford2008,
+abstract = {Code sandboxing is useful for many purposes, but most sandboxing techniques require kernel modifications, do not completely isolate guest code, or incur substantial performance costs. Vx32 is a multipurpose user-level sandbox that enables any application to load and safely execute one or more guest plug-ins, confining each guest to a system call API controlled by the host application and to a restricted memory region within the host's address space. Vx32 runs guest code efficiently on several widespread operating systems without kernel extensions or special privileges; it protects the host program from both reads and writes by its guests; and it allows the host to restrict the instruction set available to guests. The key to vx32's combination of portability, flexibility, and efficiency is its use of x86 segmentation hardware to sandbox the guest's data accesses, along with a lightweight instruction translator to sandbox guest instructions.},
+author = {Ford, Bryan and Cox, Russ},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/ford.pdf:pdf},
+journal = {Work},
+pages = {293--306},
+title = {{Vx32 : Lightweight User-level Sandboxing on the x86}},
+url = {http://portal.acm.org/citation.cfm?id=1404039},
+year = {2008}
+}
+@article{Jana2011,
+abstract = {TxBox is a new system for sand boxing untrusted applications. It speculatively executes the application in a system transaction, allowing security checks to be parallelized and yielding significant performance gains for techniques such as on-access anti-virus scanning. TxBox is not vulnerable to TOCTTOU attacks and incorrect mirroring of kernel state. Furthermore, TxBox supports automatic recovery: if a violation is detected, the sand boxed program is terminated and all of its effects on the host are rolled back. This enables effective enforcement of security policies that span multiple system calls.},
+author = {Jana, Suman and Porter, Donald E. and Shmatikov, Vitaly},
+doi = {10.1109/SP.2011.33},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/05958038.pdf:pdf},
+isbn = {9780769544021},
+issn = {10816011},
+journal = {Proceedings - IEEE Symposium on Security and Privacy},
+pages = {329--344},
+title = {{TxBox: Building secure, efficient sandboxes with system transactions}},
+year = {2011}
+}
+@article{Li2014a,
+abstract = {To prevent Iago attacks caused by mmap or sysbrk, the$\backslash$nhypervisor checks that the newly ... to be mapped as$\backslash$nexecutable, as this represents a significant$\backslash$nincrease in attack surface. ... in network I/O. In$\backslash$nthe MIEE, the supported thread synchro- nization$\backslash$nsystem calls include semaphores Yanlin Li,$\backslash$nCyLab/Carnegie Mellon University; Jonathan McCune$\backslash$nand James Newsome, CyLab/Carnegie Mellon University$\backslash$nand Google, Inc.; Adrian Perrig, CyLab/Carnegie$\backslash$nMellon University; Brandon Baker and Will Drewry,$\backslash$nGoogle, Inc.$\backslash$n},
+author = {Li, Yanlin and McCune, Jonathan and Newsome, James and Perrig, Adrian and Baker, Brandon and Drewry, Will},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/MiniBox-A Two-Way Sandbox for x86 Native Code.pdf:pdf},
+isbn = {978-1-931971-10-2},
+journal = {2014 USENIX Annual Technical Conference (USENIX ATC 14)},
+pages = {409--420},
+title = {{MiniBox: A Two-Way Sandbox for x86 Native Code}},
+url = {https://www.usenix.org/conference/atc14/technical-sessions/presentation/li{\_}yanlin},
+year = {2014}
+}
+@article{Sehr2010,
+abstract = {Software Fault Isolation (SFI) is an effective approach to sandboxing binary code of questionable provenance, an interesting use case for native plugins in a Web browser. We present software fault isolation schemes for ARM and x86-64 that provide control-flow and memory integrity with average performance overhead of under 5{\%} on ARM and 7{\%} on x86-64. We believe these are the best known SFI implementations for these architectures, with significantly lower overhead than previous systems for similar architectures. Our experience suggests that these SFI implementations benefit from instruction-level parallelism, and have particularly small impact for workloads that are data memory-bound, both properties that tend to reduce the impact of our SFI systems for future CPU implementations.},
+author = {Sehr, David and Muth, Robert and Biffle, Cliff and Khimenko, Victor and Pasko, Egor and Schimpf, Karl and Yee, Bennet and Chen, Bradley J.},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/Adapting Software Fault Isolation to Contemporary CPU Architectures.pdf:pdf},
+isbn = {8887666655554},
+journal = {19th Usenix Security Symposium},
+pages = {1--12},
+title = {{Adapting software fault isolation to contemporary CPU architectures}},
+url = {http://www.usenix.org/events/sec10/tech/full{\_}papers/Sehr.pdf},
+year = {2010}
+}
+@article{Sun2014,
+abstract = {Native code is external, difficult to analyze, mostly computation. They isolate it by putting it in a different app with zero permissions. They do not require OS mods or source code, but they recompile the app in two separate apps (Java and native). They need to proxy all the JNI stuff. Good performance MiBench (17{\%} - 0.5{\%}). 28/30 real-wold apps work. App to 183{\%} with high context switches.},
+author = {Sun, Mengtao and Tan, Gang},
+doi = {10.1145/2627393.2627396},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/p165-sun.pdf:pdf},
+isbn = {9781450329729},
+journal = {Proceedings of the 2014 ACM Conference on Security and Privacy in Wireless {\&} Mobile Networks (WiSec)},
+keywords = {android,java native interface,privilege isolation},
+pages = {165--176},
+title = {{NativeGuard: Protecting Android Applications from Third-Party Native Libraries}},
+year = {2014}
+}
+@article{Wahbe1993,
+abstract = {Wa93},
+author = {Wahbe, Robert and Lucco, Steven and Anderson, Thomas E. and Graham, Susan L.},
+doi = {10.1145/173668.168635},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/p203-wahbe.pdf:pdf},
+isbn = {9780897916325},
+issn = {01635980},
+journal = {ACM SIGOPS Operating Systems Review},
+number = {5},
+pages = {203--216},
+title = {{Efficient software-based fault isolation}},
+url = {http://portal.acm.org/citation.cfm?doid=173668.168635},
+volume = {27},
+year = {1993}
+}
+@article{Yee2009a,
+abstract = {This paper describes the design, implementation and evaluation of Native Client, a sandbox for untrusted x86 native code. Native Client aims to give browser-based applications the computational performance of native applications without compromising safety. Native Client uses software fault isolation and a secure runtime to direct system interaction and side effects through interfaces managed by Native Client. Native Client provides operating system portability for binary code while supporting performance-oriented features generally absent from Web application programming environments, such as thread support, instruction set extensions such as SSE, and use of compiler intrinsics and hand-coded assembler. We combine these properties in an open architecture that encourages community review and 3rd-party tools.},
+author = {Yee, Bennet and Sehr, David and Dardyk, Gregory and Chen, J. Bradley and Muth, Robert and Ormandy, Tavis and Okasaka, Shiki and Narula, Neha and Fullagar, Nicholas},
+doi = {10.1109/SP.2009.25},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/05207638.pdf:pdf},
+isbn = {9780769536330},
+issn = {10816011},
+journal = {Proceedings - IEEE Symposium on Security and Privacy},
+pages = {79--93},
+title = {{Native client: A sandbox for portable, untrusted x86 native code}},
+year = {2009}
+}
+@article{Zhao2011,
+abstract = {We have designed and implemented ARMor, a system that uses software fault isolation (SFI) to sandbox application code running on small embedded processors. Sandboxing can be used to protect components such as the RTOS and critical control loops from other, less-trusted components. ARMor guarantees memory safety and control flow integrity; it works by rewriting a binary to put a check in front of every potentially dangerous operation. We formally and automatically verify that an ARMored application respects the SFI safety properties using the HOL theorem prover. Thus, ARMor provides strong isolation guarantees and has an exceptionally small trusted computing base-there is no trusted compiler, binary rewriter, verifier, or operating system. Copyright {\textcopyright} 2011 ACM.},
+author = {Zhao, L.a and Li, G.b and Sutter, B.D.c and Regehr, J.a},
+doi = {10.1145/2038642.2038687},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/p289-zhao.pdf:pdf},
+isbn = {978-1-4503-0712-3},
+journal = {Embedded Systems Week 2011, ESWEEK 2011 - Proceedings of the 9th ACM International Conference on Embedded Software, EMSOFT'11},
+keywords = {arm executables,automated theorem proving,program logic,software fault isolation},
+pages = {289--298},
+title = {{ARMor: Fully verified software fault isolation}},
+url = {http://www.scopus.com/inward/record.url?eid=2-s2.0-80455129085{\&}partnerID=40{\&}md5=17f69d5df7670ea6d41ad8a1c55fab3c},
+year = {2011}
+}
+@article{Maier2014,
+abstract = {In this paper, we demonstrate that Android malware can bypass all automated analysis systems, including AV solutions, mobile sandboxes, and the Google Bouncer. We propose a tool called Sand-Finger for the fingerprinting of Android-based analysis systems. By analyzing the fingerprints of ten unique analysis environments from different vendors, we were able to find characteristics in which all tested environments differ from actual hardware. Depending on the availability of an analysis system, malware can either behave benignly or load malicious code at runtime. We classify this group of malware as Divide-and-Conquer attacks that are efficiently obfuscated by a combination of fingerprinting and dynamic code loading. In this group, we aggregate attacks that work against dynamic as well as static analysis. To demonstrate our approach, we create proof-of-concept malware that surpasses up-to-date malware scanners for Android. We also prove that known malware samples can enter the Google Play Store by modifying them only slightly. Due to Android's lack of an API for malware scanning at runtime, it is impossible for AV solutions to secure Android devices against these attacks.},
+author = {Maier, Dominik and Muller, Tilo and Protsenko, Mykola},
+doi = {10.1109/ARES.2014.12},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Malware detection/06980261.pdf:pdf},
+isbn = {9781479942237},
+journal = {Proceedings - 9th International Conference on Availability, Reliability and Security, ARES 2014},
+keywords = {AV,Android malware,Google bouncer,Mobile sandboxes,Obfuscation,Static and dynamic analysis},
+pages = {30--39},
+title = {{Divide-and-conquer: Why android malware cannot be stopped}},
+year = {2014}
+}
+@article{Fratantonio2016,
+author = {Fratantonio, Yanick and Bianchi, Antonio and Robertson, William and Kirda, Engin and Kruegel, Christopher and Vigna, Giovanni},
+doi = {10.1109/SP.2016.30},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/2016{\_}SP{\_}Triggerscope.pdf:pdf},
+journal = {Ieee S{\&}P},
+pages = {1--33},
+title = {{TriggerScope: Towards Detecting Logic Bombs in Android Applications}},
+year = {2016}
+}
+@article{Mccamant2006,
+abstract = {Executing untrusted code while preserving security requires that the code be prevented from modifying memory or executing instructions except as explicitly allowed. Software-based fault isolation (SFI) or “sandboxing” enforces such a policy by rewriting the untrusted code at the instruction level. However, the original sandboxing technique of Wahbe et al. is applicable only to RISC architectures, and most other previous work is either insecure, or has been not described in enough detail to give confidence in its security properties. We present a new sandboxing technique that can be applied to a CISC architecture like the IA-32, and whose application can be checked at load-time to minimize the TCB. We describe an implementation which provides a robust security guarantee and has lowruntime overheads (an average of 21{\%} on the SPECint2000 benchmarks). We evaluate the utility of the technique by applying it to untrusted decompression modules in an archive tool, and its safety by constructing a machine-checked proof that any program approved by the verification algorithm will respect the desired safety property.},
+author = {Mccamant, Stephen and Morrisett, Greg},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/pittsfield-usenix2006.pdf:pdf},
+journal = {USENIX Association},
+pages = {209--224},
+title = {{Evaluating SFI for a CISC Architecture}},
+year = {2006}
+}
+@article{Jing2014,
+author = {Jing, Yiming and Zhao, Ziming and Ahn, Gail-Joon and Hu, Hongxin},
+doi = {10.1145/2664243.2664250},
+file = {:C$\backslash$:/Users/ysafaeis/Desktop/Sandboxing/p216-jing.pdf:pdf},
+isbn = {9781450330053},
+journal = {Proceedings of the 30th Annual Computer Security Applications Conference on - ACSAC '14},
+keywords = {Android,emulator,malware},
+pages = {216--225},
+title = {{Morpheus}},
+url = {http://dl.acm.org/citation.cfm?id=2664243.2664250},
+year = {2014}
+}
+
+
