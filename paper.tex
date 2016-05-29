@@ -71,6 +71,7 @@ of abstracted layers: hardware, firmware, bus, hypervisor, operating
 system, application, and network layers. In this way, we can
 categorize the research efforts that target each layer.
 
+% Sai: should this be 'arranged' instead of 'arraigned'?
 The layers are arraigned from lowest to highest layer. The lower layer
 has more control over the computing system, while the upper layers
 have less control. For instance, the Hardware layer has total control
@@ -96,17 +97,17 @@ a complete reinstall of the operating system.
 
 In our abstract model, the lower levels have more control over the
 computing system, yet they have a smaller attacker surface. However,
-the lower levels can be attacked by the upper levels. Also, the upper
+the lower levels can be attacked by exploiting the upper levels. Also, the upper
 levels trust the abstractions provided by the lower levels. For
 instance, the application-layer visualization of an industrial control
-system trusts that the data reported by the hardware layer it
+system trusts that the data reported by the hardware layer is
 accurate. If an attacker is able to control and manipulate the
 hardware to falsely report the state of the system, the entire
 integrity of the system can be compromised.
 
 The interconnected nature of the layers means that the security of the
-entire layers must be a priority. However, at the same time, the
-security improvement of any layer will have an amplifying affect of
+entire layer must be a priority. However, at the same time, the
+security improvement of any layer will have an amplifying effect on
 the security of the whole system. For instance, improvement to the
 security of the application layer decreases the chance of an
 application compromise, which further decreases the risk of the attack
