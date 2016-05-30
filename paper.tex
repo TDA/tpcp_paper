@@ -146,41 +146,41 @@ of the hardware is of paramount importance.
 
 The main threat considered by the literature on hardware is the threat
 of Trojan logic. This is malicious logic that is introduced into the
-hardware chip by a malicious adversary. Trojan introduction can be
+% adversary, by definition is a malicious entity.
+hardware chip by an adversary. Trojan introduction can be
 done at several points of the hardware lifecycle:
 
 \begin{itemize}
 
-\item Design. A malicious insider can incorporate a Trojan into the
+\item \textbf{Design}. A malicious insider can incorporate a Trojan into the
   design of the hardware.
 
-\item Third-party IP. Oftentimes, hardware designers will take
+\item \textbf{Third-party IP}. Oftentimes, hardware designers will take
   advantage of the functionality of third-party components, using them
   as a black-box. Thus, a third-party can include malicious Trojan
   logic.
 
-\item Compilation of Design. When the design of the hardware is
+\item \textbf{Compilation of Design}. When the design of the hardware is
   compiled, but before it is sent for fabrication, the design could be
   changed to incorporate the Trojan logic. Note that this differs from
   Design-time, because the Trojan logic is not included in the design.
   Consider the case of malware on a hardware designer's machine, which
   changes the design when it is compiled.
 
-\item Manufacture. A malicious manufacturer can introduce Trojan logic
-  into hardware after the design is received but before the hardware
-  is fabricated.
+\item \textbf{Manufacture}. A malicious manufacturer can introduce Trojan logic into hardware after the design is received but before the hardware
+is fabricated.
 
-\item Delivery. A malicious hardware component containing Trojan logic
-  can be swapped with a benign component after fabrication but before
-  delivery and installation.
+\item \textbf{Delivery}. A malicious hardware component containing Trojan logic can be swapped with a benign component after fabrication but before
+delivery and installation.
   
 \end{itemize}
 
 The malicious Trojan logic behavior comes in three different forms:
+% Sai: is this three or two??
 
 \begin{itemize}
 
-\item Trigger-based. The malicious behavior or logic is only expressed
+\item \textbf{Trigger-based}. The malicious behavior or logic is only expressed
   when certain conditions are met. Consider a Trojan logic in a CPU,
   which changes the executing code to Ring 0 (with the most
   privileges) when a specific sequence of instructions are issued. The
@@ -188,7 +188,7 @@ The malicious Trojan logic behavior comes in three different forms:
   could be external, for instance a certain radio frequency will
   trigger the malicious code.
 
-\item Constant. The malicious behavior or logic is continually
+\item \textbf{Constant}. The malicious behavior or logic is continually
   executed and subtly changes the output of the hardware in a way that
   compromises security. Consider a Trojan logic of a Wi-Fi card, which
   leaks the Wi-Fi passphrase by embedding it in the operating
