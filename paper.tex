@@ -180,8 +180,7 @@ The malicious Trojan logic behavior comes in three different forms:
 
 \begin{itemize}
 
-\item \textbf{Trigger-based}. The malicious behavior or logic is only expressed
-  when certain conditions are met. Consider a Trojan logic in a CPU,
+\item \textbf{Trigger-based}. The malicious behavior or logic is only expressed when certain conditions are met. Consider a Trojan logic in a CPU,
   which changes the executing code to Ring 0 (with the most
   privileges) when a specific sequence of instructions are issued. The
   trigger can be internal to the chip, such as in the CPU case, or
@@ -220,7 +219,7 @@ actually implementing Trojan behavior~\cite{King2008, Jin2010,
 shows that Trojan logic is feasible for an attack.
 
 Of particular practical interest is a description of \emph{actual
-  Trojan logic} discovered in a the ProASIC3 Flash FPGA military
+  Trojan logic} discovered in the ProASIC3 Flash FPGA military
 chip~\cite{Skorobogatov2012}. While in this case it was not proved
 that the logic introduced to the chip was intentionally malicious,
 nevertheless there existed functionality in the hardware that was
@@ -243,7 +242,9 @@ this increases the cost and complexity of implemented JTAG.
 
 Another approach is to change the design of the chip to support
 runtime monitoring~\cite{Waksman2010}. In this way, the hardware
-itself is monitoring itself, rather than external analysis of
+itself is monitoring itself, 
+% Sai: can we rephrase this^ ? sounds weird
+rather than external analysis of
 side-channels. However, this has all the same drawbacks of changing
 the design of hardware, in addition to not being robust in the face of
 a powerful attacker who is able to alter the design. 
