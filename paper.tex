@@ -312,8 +312,8 @@ platform.
 
 Due to the hardware-specific nature of firmware, \emph{reverse
   engineering} is critical to understanding the firmware. In addition,
-reverse engineering is particularly difficult because source code is
-frequently unavailable, and vendors desire to protect their
+reverse engineering is particularly challenging because source code is
+frequently unavailable, and vendors' desire to protect their
 intellectual property makes them actively obfuscate their
 firmware. All this means that, extracting semantically useful
 information from firmware is a key first step to performing any
@@ -423,7 +423,7 @@ including analysis of memory layouts, code modules, even answering the
 simple question of what in a firmware binary is code and what is data.
 
 Finally, even if we find vulnerabilities or Trojan logic in a
-firmware, there is still the unanswered questions of how to patch or
+firmware, there is still the unanswered question of how to patch or
 update the functionality of the firmware while still guaranteeing the
 behavior of the firmware. This is particularly complicated due to the
 real-time requirements of the firmware and the potentially concurrent
@@ -437,9 +437,8 @@ Different computing architectures have different technical
 implementations of the bus and interconnect. For instance, the
 communication network in the automotive system, which has received
 significant attention from the research community, uses a CAN bus to
-communicate. Modern motherboards us either a Northbound or Southbound
-bus to communicate between the CPU and the other peripheral devices,
-such as USB.
+communicate. Modern motherboards use either a Northbound or Southbound
+bus --- such as USB --- to communicate between the CPU and other peripheral devices.
 
 \subsection{Threats}
 
@@ -464,7 +463,7 @@ messages, an attacker on the bus and interconnect layer can listen to
 messages on the bus, potentially eavesdropping on sensitive messages.
 
 If the bus and interconnect layer offers advanced functionality, such
-as the DMA example, then devices that an attacker is able to connect
+as the DMA example, then the devices that an attacker is able to connect
 to the bus could take advantage of this functionality. In the case of
 DMA, this means that any device on the bus has full access to the
 physical memory of the system, therefore the attacker has complete
@@ -484,7 +483,7 @@ is difficult in legacy systems.
 \subsection{Research}
 
 A major area of research in the Bus and Interconnect layer is work
-that shows the danger of a bus and interconnect that allows malicious
+that shows the dangers of a bus and interconnect that allows malicious
 devices to either impersonate devices on the bus or leverage bus
 capabilities, particularly in the automotive area~\cite{Bonkoski2013,
   Checkoway2011, Hoppe2008, Koscher2010, Rouf2010, Sang2010}.
