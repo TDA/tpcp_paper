@@ -1,9 +1,10 @@
 main.pdf
+paper.pdf
 appendix.pdf
-main.log
-main.aux
-main.bbl
-main.blg
+*.log
+*.aux
+*.bbl
+*.blg
 
 *.sublime-*
 *.kate-swp
