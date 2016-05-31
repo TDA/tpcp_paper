@@ -300,21 +300,21 @@ upper layers by device drivers in the Operating System.
 
 Many different hardware contain firmware, for instance the boot BIOS
 on a motherboard is a form of firmware, embedded systems often contain
-specific firmware, hardware peripheral such as network cards contain
+specific firmware, hardware peripherals such as network cards contain
 firmware as well. We consider all such areas as firmware.
 
 The key traits of firmware is that, although it is binary code, it is
 operating/interacting directly with the hardware, so there are no
 OS-style abstraction layers such as virtual memory, well-defined
 system calls, or hardware abstraction. Therefore, each firmware is
-binary code with is specifically tailed to a specific hardware
+binary code which is specifically tailored to a specific hardware
 platform.
 
 Due to the hardware-specific nature of firmware, \emph{reverse
   engineering} is critical to understanding the firmware. In addition,
 reverse engineering is particularly difficult because source code is
-frequently unavailable, and, vendors desire to protect their
-intellectual property, therefore, they actively obfuscate their
+frequently unavailable, and vendors desire to protect their
+intellectual property makes them actively obfuscate their
 firmware. All this means that, extracting semantically useful
 information from firmware is a key first step to performing any
 security analysis of the firmware.
@@ -335,15 +335,15 @@ of vulnerabilities that infect traditional binary software (buffer
 overflows, logic flaws, etc.). However, firmware typically has full
 control over the entire computing system, therefore vulnerabilities in
 firmware are much more severe than those in the application layer. In
-addition, if an attacker is able to persist their exploit, because the
-compromise occurs at such a low layer of the computing system, the
+addition, if an attacker is able to persist their exploit --- because the
+compromise occurs at such a low layer of the computing system --- the
 attacker can persist \emph{even after reinstalling the operating
   system or application}.
 
 The attack surface for firmware varies depending on where it is used.
 In the most general case, the attacks can come from the upper layers,
 specifically the Operating System or Hypervisor layers, as these are
-the layers of the computing stack that can directly communicate to the
+the layers of the computing stack that can directly communicate with the
 firmware. However, other firmware can be attacked either directly
 through the Hardware layer itself, or through the data being
 transmitted through the firmware from the hardware. For instance, a
