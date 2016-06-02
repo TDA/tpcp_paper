@@ -843,11 +843,11 @@ applications, command-line applications, server batch process
 applications, web applications, or mobile applications. Also, all
 programming languages used to develop the applications are also in
 scope, from compiled languages such as C or C++ to scripting languages
-such as Python and Ruby. In short, all types of computing application
+such as Python and Ruby. In short, all types of computing applications
 are included in the application layer.
 
 Due to abstractions provided by the lower layers, applications
-typically have less privilege than the lower layers of the computing
+typically have lesser privilege than the lower layers of the computing
 stack. This is due to the abstractions provided to the application
 layer, for instance an application cannot access the underlying hard
 drive directly, but must use the Operating System's provided
@@ -858,7 +858,7 @@ completely. This is due in part to the reliance on the abstractions
 provided by the lower computing layers (as these abstractions must be
 fully understood to understand how the application uses them). Another
 aspect is that applications frequently use shared libraries or other
-middleware, which as also considered to be part of the application
+middleware, which are also considered to be part of the application
 layer. In this way, multiple different applications can all use the
 same underlying library. As the application's behavior depends on the
 behavior of \emph{all} used libraries and abstractions, this means
@@ -867,12 +867,12 @@ complexity of the used abstractions.
 
 \subsection{Threats}
 
-Applications, by definition must be accessible by users in
+Applications, by definition, must be accessible by users in
 order to perform their useful computation. Due to this accessibility,
 the application layer, of all the other computing layers, is the entry
 point for attacks or exploits. 
 
-At a high level the threats to the application layers is an attacker
+At a high level the threat to the application layer is attackers being
 able to influence the system to perform computation of their choosing.
 There are two main vectors for an attacker to influence the system:
 (1) software vulnerabilities in an application that can allow an
@@ -885,8 +885,7 @@ usually by using social engineering techniques.
 Vulnerabilities are flaws or bugs in the application (or any software
 for that matter) that allows an attacker to compromise the security of
 the application. The key difference from normal flaws or bugs in
-software is that vulnerabilities allow the program to deviate from the
-behavior. These vulnerabilities range the gamut of possible causes
+software is that vulnerabilities allow the program to deviate from the expected behavior. These vulnerabilities range the gamut of possible causes
 such as programming errors or configuration mistakes. They can be in
 the actual, custom application software or in any of the libraries
 that the application uses. Some vulnerabilities are specific to a
@@ -936,7 +935,7 @@ code.
 The idea behind this subarea of application layer security research is
 to reduce the attack surface of the application. This line of research
 views vulnerabilities as a probability, and by reducing the attack
-surface, the odds of an attacking being able to exploit a
+surface, the odds of an attack being able to exploit a
 vulnerability successfully is reduced as well.
 
 Attempts have been made to measure an application's attack
@@ -945,7 +944,7 @@ This has the benefit of attempting to quantify the attack surface of
 an application, which in itself is a difficult problem.
 
 Several research works attempt to reduce the attack surface. Some
-approaches try to statically analyzing for deadcode, then restrict the
+approaches try to statically analyze for deadcode, then restrict the
 execution of the deadcode during runtime~\cite{Kurmus2011}. Other ways
 attempt to leverage compile-time configurability to reduce the attack
 surface~\cite{Tartler2012, Kurmus2013, Ruprecht2014}. A different
