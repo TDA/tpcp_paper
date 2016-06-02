@@ -959,7 +959,7 @@ measure the actual reduction~\cite{Kurmus2014}.
 
 \subsubsection{Prevent control-flow hijacking}
 
-Modern attackers, exploiting binary applications, such as browsers,
+Modern attackers, exploiting binary applications such as browsers,
 media players, or PDF readers, attempt to hijack the control-flow of
 the application. If an attacker successfully hijacks the control-flow
 of the application, then she has complete control over the execution
@@ -986,14 +986,14 @@ application, so that the attacker can hijack the control-flow of the
 application without introducing new code~\cite{Roemer2012,
   Bletsch2010, Tran2011}. Researchers have also improved these ROP
 techniques~\cite{Checkoway2010, Buchanan2008, Kayaalp2012, Chen2012,
-  Goktas2014, Schwartz2011} and applied them to different
+  Goktas2014, Schwartz2011} and applied them to a different
 architecture~\cite{Davi2012}.
 
 Other research has looked at defending ROP attacks~\cite{Pappas2012,
   Davi2009, Davi2011, Onarlioglu2010, Gupta2013, Pappas2012, Lu2011,
   Lu2011a, Homescu2012, Gokta2014, Cheng2014, Pappas2013, Snow2013,
   Hiser2012, Wartell2012} or detecting ROP
-attacks\cite{Polychronakis2011}. Metastudies looked at the
+attacks\cite{Polychronakis2011}. Metastudies have looked at the
 effectiveness of these defenses~\cite{Skowyra2013, Schuster2014}.
 
 Finally, other research has shown that even with perfect control-flow
@@ -1005,9 +1005,9 @@ flow~\cite{Carlini2015, Schuster2015, Carlini2014, Davi2014}.
 
 Not all security vulnerabilities are the result of memory corruption
 or other programming language-based flaws. Another kind of
-vulnerability class are called logic (or implementation) flaws. These
+vulnerability class is called logic (or implementation) flaws. These
 flaws occur when the logic of the application is faulty. Consider an
-ecommerce application that allows a coupon to be reapplied to an order
+e-commerce application that allows a coupon to be reapplied to an order
 multiple times, driving the price to zero. Or if a user is able to
 enter a negative quantity for the purchase of an item, and the
 application uses that negative quantity to refund the purchase price!
@@ -1025,31 +1025,29 @@ type of logic flaw, rather than detecting logic flaws generally. Early
 work looked at detecting state violations in web
 applications~\cite{Cova2007}.
 
-Other classes such as preventing access control
-vulnerabilities~\cite{dalton09:nemesis} or statically detecting
-them~\cite{Sun2011}. Privilege escalation
-vulnerabilities~\cite{Monshizadeh2014}, data disclosure
-vulnerabilities~\cite{Muthukumaran2015}
+Other research has looked at preventing access control
+vulnerabilities~\cite{dalton09:nemesis}, or statically detecting
+them~\cite{Sun2011}.
+Some research has looked at other types of logic
+flaws, such as
+Privilege escalation vulnerabilities~\cite{Monshizadeh2014}, data disclosure
+vulnerabilities~\cite{Muthukumaran2015}, single sign-on vulnerabilities~\cite{Zhou2014}, and parameter tampering vulnerabilities~\cite{Bisht2010, Bisht2011}.
 
-Parameter tampering vulnerabilities are another type of logic
-flaw~\cite{Bisht2010, Bisht2011}
-
-Execution After Redirect are another type of logic flaw
-vulnerabilities in web applications~\cite{Doupe2011, Payet2013}
-
-Single sign-on vulnerabilities~\cite{Zhou2014}.
+Execution After Redirect is another type of logic flaw
+vulnerability in web applications~\cite{Doupe2011, Payet2013}.
 
 Work on detecting logic vulnerabilities directly started with
 attempting to infer security specifications of an
 application~\cite{tan08:autoises, Livshits2009a}. Other approaches dynamically
-execute the application to infer likely invariants, then static
-analysis attempts to find paths that violation those
+execute the application to infer likely invariants, then use static
+analysis to attempt to find paths that violate those
 invariants~\cite{felmetsger10:logic}. Further work tried to find missing
 security (authorization) checks automatically, without prior knowledge
 of the checks~\cite{Son2011, Son2013}.
 
+% citation needed here for black-box testing
 Recent work has looked at detecting logic flaw vulnerabilities in web
-applications in a black-box manner---that is, no knowledge of the
+applications in a black-box manner---that is, with no knowledge of the
 application's source code~\cite{Pellegrino2014}.
 
 
