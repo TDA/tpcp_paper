@@ -1055,6 +1055,13 @@ application's source code~\cite{Pellegrino2014}.
 \subsubsection{Mitigation and recovery}
 
 \subsubsection{Modeling and monitoring execution}
+This subarea of application layer security concentrates on modeling, monitoring, and analyzing the execution of an application to verify that the system is executing as expected, and to detect any malicious behavior. This can be seen as a testing strategy towards application security.
+
+There has been some research in finding new approaches of test generation for systems. One such approach is Concolic Testing~\cite{sen2007concolic}, which combines symbolic execution with concrete execution of the code being tested.
+
+Research has been made to automatically generate test inputs for Concolic testing (so that all execution paths can be tested) for major languages like C, C++, and Java~\cite{Garg2013, Jayaraman2009, Sen2005}. Other research in this area includes an approach to combine Random testing~\cite{bird1983automatic} with Concolic execution~\cite{Majumdar2007}, automated Concolic testing for smartphone applications~\cite{anand2012automated}, and using Concolic testing in a distributed, scalable way~\cite{kim2012scalable}. There has also been some work on discussing concolic testing tools and their limitations~\cite{Qu2011}.
+
+
 
 \subsubsection{Protection against malicious code}
 
