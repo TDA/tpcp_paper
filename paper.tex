@@ -71,7 +71,7 @@ of abstracted layers: hardware, firmware, bus, hypervisor, operating
 system, application, and network layers. In this way, we can
 categorize the research efforts that target each layer.
 
-% Sai: should this be 'arranged' instead of 'arraigned'?
+% Sai: should this be 'arranged' instead of 'arraigned'?%Faris: I think it should be 'arranged'.
 The layers are arraigned from lowest to highest layer. The lower layer
 has more control over the computing system, while the upper layers
 have less control. For instance, the Hardware layer has total control
@@ -243,7 +243,7 @@ this increases the cost and complexity of implemented JTAG.
 Another approach is to change the design of the chip to support
 runtime monitoring~\cite{Waksman2010}. In this way, the hardware
 itself is monitoring itself, 
-% Sai: can we rephrase this^ ? sounds weird
+% Sai: can we rephrase this^ ? sounds weird %Faris : Removing the first 'itself' may solve the problem.
 rather than external analysis of
 side-channels. However, this has all the same drawbacks of changing
 the design of hardware, in addition to not being robust in the face of
@@ -294,29 +294,61 @@ logic, potentially using randomization techniques similar to ASLR.
 
 \section{Firmware}
 
+%Note: I did not remove the previous versions of those paragraphs
+%(commented them) so feel free to check the previous versions and 
+%revert them if my changes have problems.
+
+%Firmware is the layer of software that sits and interacts directly
+%with the hardware. Typically, the firmware is controlled from the
+%upper layers by device drivers in the Operating System.
+
+%Faris:
 Firmware is the layer of software that sits and interacts directly
-with the hardware. Typically, the firmware is controlled from the
-upper layers by device drivers in the Operating System.
+with the hardware. Typically, the firmware is controlled by the
+device drivers in the upper layers of the Operating System.
 
-Many different hardware contain firmware, for instance the boot BIOS
-on a motherboard is a form of firmware, embedded systems often contain
-specific firmware, hardware peripherals such as network cards contain
-firmware as well. We consider all such areas as firmware.
+%Many different hardware contain firmware, for instance the boot BIOS
+%on a motherboard is a form of firmware, embedded systems often contain
+%specific firmware, hardware peripherals such as network cards contain
+%firmware as well. We consider all such areas as firmware.
 
-The key traits of firmware is that, although it is binary code, it is
+%Faris:
+Many different hardware contain firmware. For instance: the boot BIOS
+on a motherboard, embedded systems that contain
+specific firmware, hardware peripherals such as network cards. 
+We consider all such areas as firmware.
+
+%The key traits of firmware is that, although it is binary code, it is
+%operating/interacting directly with the hardware, so there are no
+%%OS-style abstraction layers such as virtual memory, well-defined
+%system calls, or hardware abstraction. Therefore, each firmware is
+%binary code which is specifically tailored to a specific hardware
+%platform.
+
+%Faris:
+Although firmware is binary code, it is
 operating/interacting directly with the hardware, so there are no
 OS-style abstraction layers such as virtual memory, well-defined
-system calls, or hardware abstraction. Therefore, each firmware is
-binary code which is specifically tailored to a specific hardware
-platform.
+system calls, or hardware abstraction which is the key trait of firmware. 
+Therefore, each firmware is specifically tailored to a specific hardware platform.
 
+%Due to the hardware-specific nature of firmware, \emph{reverse
+%	engineering} is critical to understanding the firmware. In addition,
+%reverse engineering is particularly challenging because source code is
+%frequently unavailable, and vendors' desire to protect their
+%intellectual property makes them actively obfuscate their
+%firmware. All this means that, extracting semantically useful
+%information from firmware is a key first step to performing any
+%security analysis of the firmware.
+
+%Faris:
 Due to the hardware-specific nature of firmware, \emph{reverse
-  engineering} is critical to understanding the firmware. In addition,
-reverse engineering is particularly challenging because source code is
+  engineering} is critical to understand it. In addition,
+reverse engineering is particularly challenging because the source code is
 frequently unavailable, and vendors' desire to protect their
 intellectual property makes them actively obfuscate their
-firmware. All this means that, extracting semantically useful
-information from firmware is a key first step to performing any
+firmware. This means, extracting semantically useful
+information from firmware is the first and key step to perform any
 security analysis of the firmware.
 
 \subsection{Threats}
@@ -328,6 +360,19 @@ vulnerabilities in the firmware code itself which allow an attacker to
 execute arbitrary code with the capabilities of the firmware and (2)
 firmware with intentional Trojan (backdoor) capabilities.
 
+%Vulnerabilities in the firmware code allow an attacker to execute
+%arbitrary code with the permissions of the firmware. The class of
+%vulnerabilities are not unique to firmware, as they are the same class
+%of vulnerabilities that infect traditional binary software (buffer
+%overflows, logic flaws, etc.). However, firmware typically has full
+%control over the entire computing system, therefore vulnerabilities in
+%firmware are much more severe than those in the application layer. In
+%addition, if an attacker is able to persist their exploit --- because the
+%compromise occurs at such a low layer of the computing system --- the
+%attacker can persist \emph{even after reinstalling the operating
+%	system or application}.
+
+%Faris:
 Vulnerabilities in the firmware code allow an attacker to execute
 arbitrary code with the permissions of the firmware. The class of
 vulnerabilities are not unique to firmware, as they are the same class
@@ -335,17 +380,28 @@ of vulnerabilities that infect traditional binary software (buffer
 overflows, logic flaws, etc.). However, firmware typically has full
 control over the entire computing system, therefore vulnerabilities in
 firmware are much more severe than those in the application layer. In
-addition, if an attacker is able to persist their exploit --- because the
-compromise occurs at such a low layer of the computing system --- the
-attacker can persist \emph{even after reinstalling the operating
-  system or application}.
+addition, the attacker may remain in the system because the
+compromise occurs at such a low layer of the computing system so the
+exploit persists \emph{even after reinstalling the operating
+system or application}.
 
+%The attack surface for firmware varies depending on where it is used.
+%In the most general case, the attacks can come from the upper layers,
+%specifically the Operating System or Hypervisor layers, as these are
+%the layers of the computing stack that can directly communicate with the
+%firmware. However, other firmware can be attacked either directly
+%through the Hardware layer itself, or through the data being
+%transmitted through the firmware from the hardware. For instance, a
+%network card firmware could be attacked through network traffic that
+%the firmware processes.
+
+%Faris:
 The attack surface for firmware varies depending on where it is used.
-In the most general case, the attacks can come from the upper layers,
+In the general case, the attacks can come from the upper layers,
 specifically the Operating System or Hypervisor layers, as these are
 the layers of the computing stack that can directly communicate with the
 firmware. However, other firmware can be attacked either directly
-through the Hardware layer itself, or through the data being
+through the Hardware layer, or through the data being
 transmitted through the firmware from the hardware. For instance, a
 network card firmware could be attacked through network traffic that
 the firmware processes.
@@ -356,25 +412,43 @@ lack of a well-defined operating system abstraction for the firmware
 code. In essence, each firmware is a custom binary with little in the
 way of assumptions that vulnerability analysis can take advantage of. 
 
-Trojan capabilities in the firmware itself can allow a system to be
+%Trojan capabilities in the firmware itself can allow a system to be
+%remotely controlled or accessed. This is similar to a vulnerability,
+%in that an attacker is able to control the firmware, however the key
+%difference lies in the fact that Trojan behavior will be intentionally
+%obfuscated by an attacker, whereas a vulnerability is accidentally
+%introduced by a benign developer. Therefore, Trojan behavior is 
+%more difficult to detect, because there is an active adversary who is
+%intentionally obfuscating the behavior. 
+
+%Faris:
+Trojan capabilities in the firmware can allow a system to be
 remotely controlled or accessed. This is similar to a vulnerability,
 in that an attacker is able to control the firmware, however the key
-difference lies in the fact that Trojan behavior will be intentionally
-obfuscated by an attacker, whereas a vulnerability is accidentally
+difference lies in the fact that Trojan behavior can be intentionally
+obfuscated by an attacker, whereas a vulnerability can accidentally
 introduced by a benign developer. Therefore, Trojan behavior is 
-more difficult to detect, because there is an active adversary who is
-intentionally obfuscating the behavior. 
+difficult to detect.
 
+%Vulnerabilities in the firmware and Trojan capabilities are related
+%because both require \emph{understanding} the behavior and semantics
+%of the firmware code. This is why reverse engineering is such a
+%critical component of securing the threats against the firmware layer:
+%in order to detect either vulnerabilities or Trojan functionality, an
+%automated tool must first understand the semantics of the particular
+%firmware/hardware combination. 
+
+%Faris:
 Vulnerabilities in the firmware and Trojan capabilities are related
 because both require \emph{understanding} the behavior and semantics
 of the firmware code. This is why reverse engineering is such a
-critical component of securing the threats against the firmware layer:
-in order to detect either vulnerabilities or Trojan functionality, an
-automated tool must first understand the semantics of the particular
+critical component of securing the firmware layer against the threats.
+In order to detect vulnerabilities or trojan functionality, an
+automated tool must understand the semantics of the particular
 firmware/hardware combination. 
 
 \subsection{Research}
-
+%Faris: Some fixes below. 
 Researchers have attempted to identify real-world attacks on firmware
 code~\cite{Tsow2006, Cui2010, Duflot2011, Basnight2013, Cui2013,
   Zaddach2013, Zaddach2013a, Maskiewicz2014, Stuttgen2015}. These
@@ -382,52 +456,52 @@ attacks are particularly effective, and researchers have shown that
 these are able to persist through a reboot and cannot be detected by
 the upper layers. 
 
-Other approaches have looked at how to prevent the tampering of
-firmware~\cite{Adelstein2002, Zhou2007, Zhou2009}. This protects from
+Other approaches are about how to prevent the tampering of
+firmware~\cite{Adelstein2002, Zhou2007, Zhou2009}. These protect from
 the threat of tampering or altering the firmware, however it does not
 address vulnerable firmware. 
 
-Another approach has been to include runtime monitoring into the
+Another approach includes runtime monitoring into the
 firmware, so that compromises can be detected~\cite{Cui2010a,
   Cui2011}. This approach is further complicated by the lack of
 abstractions in the firmware environment. 
 
-Recent work has looked at the problem of updating the design of the
+Recent work has looked into the problem of updating the design of the
 firmware so that it has security features, such as memory handling and
 avoiding information leakage~\cite{Koeberl2014, Kauer2007}. However,
 forcing firmware developers to use such features is an open issue.
 
-Very few work has looked at how to reverse engineer and understand the
+Very few work has looked into how to reverse engineer and understand the
 firmware~\cite{Zaddach2014}. This problem is of particular interest,
 as understanding the semantics of the firmware and how it interacts
 with hardware is a key challenge. 
 
-Recent work has looked at how to detect vulnerabilities in
+Recent work has looked into how to detect vulnerabilities in
 firmware~\cite{Davidson2013, Costin2014, Shoshitaishvili2015}. One of
 these has an excellent website\footnote{\url{http://firmware.re}}
 that contains the results of their reverse engineering and
 vulnerability analysis~\cite{Costin2014}.
 
 \subsection{Suggested Focus Areas}
-
+%Faris: Some fixes below.
 Of all the layers, firmware has received the least attention from the
 research community. Therefore, we believe that focus on this research
 area will yield significant dividends. 
 
-The major issue with firmware vulnerabilities is how to decouple
+The major challenge with preventing firmware vulnerabilities is how to decouple
 firmware from the hardware, potentially using emulation of the
 hardware, in order to aid the analysis of the firmware. 
 
 In a similar vein, there is need for automated reverse engineering tools,
 including analysis of memory layouts, code modules, even answering the
-simple question of what in a firmware binary is code and what is data.
+simple question of what is code in a firmware binary and what is data.
 
 Finally, even if we find vulnerabilities or Trojan logic in a
 firmware, there is still the unanswered question of how to patch or
 update the functionality of the firmware while still guaranteeing the
 behavior of the firmware. This is particularly complicated due to the
 real-time requirements of the firmware and the potentially concurrent
-executions. 
+executions.  
 
 \section{Bus and Interconnect}
 
