@@ -1,0 +1,30 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.50,node distance=3pt,outer sep=0pt,
+platformlayer/.style={
+  draw=darkgray,
+  fill=nodecolor,
+  rounded corners,
+  text width=4.5cm,
+  font={\sffamily\bfseries\color{black}},
+  align=center,
+  text height=9pt,
+  text depth=6pt},
+]
+\node[platformlayer] (APP) {Application};
+\node[platformlayer,below=of APP](OS) {Operating System};
+\node[platformlayer,below=of OS] (HYP) {Hypervisor};
+\node[platformlayer,below=of HYP](BUS){BUS and Interconnect};
+\node[platformlayer,below=of BUS](FW) {Firmware};
+\node[platformlayer,below=of FW](HW) {Hardware};
+
+\begin{pgfonlayer}{background}
+\draw[platformlayer,draw=black,fill=nodecolor!40]([xshift=-\framesep,yshift=1\framesep]current bounding box.north west)
+rectangle ([xshift=\framesep,yshift=-\framesep]current bounding box.south east) 
+node[below] at (0,2) {};
+
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Computing Platform Layers}
+\label{fig:layers}
+\end{figure}

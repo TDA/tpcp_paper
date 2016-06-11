@@ -12,6 +12,18 @@
 \usepackage{titling}
 \usepackage{color}
 
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\definecolor{nodecolor}{RGB}{202,202,202}
+\newlength\framesep
+\setlength\framesep{16pt}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\pgfkeys{
+	/tikz/node distance/.append code={
+		\pgfkeyssetvalue{/tikz/node distance value}{#1}
+	}
+}
 
 \widowpenalty=10000
 \clubpenalty=10000
@@ -44,7 +56,7 @@ platform into several layers, each of which are applicable to every
 computing infrastructure. In particular, we analyzed the security
 research performed at the following layers of the computing platform:
 hardware, firmware, bus, hypervisor, operating system, application,
-and network layers.
+and network layers (Figure~1).
 
 The goal of this work is to focus research effort on \emph{securing
   the entire computing platform.} An attack must effectively target a
@@ -62,7 +74,7 @@ In this report, we will first discuss the computing stack, and, for
 every layer, we will describe the layer, identify primary threats
 against the layer, and summarize the research on attempts to secure
 that layer, and finally we will determine areas that require further
-research investment to ensure the security of the layer.
+research investment to ensure the security of the layer.\input{fig_layers}
 
 \section{Background}
 
