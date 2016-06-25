@@ -213,10 +213,10 @@ attempts to detect them.
 \subsection{Research}
 
 Most research into hardware Trojans deal with using side-channel
-analysis to identify the malicious Trojan behavior~\cite{Lee2005,
-  Agrawal2007, Banga2008, Banga2008a, Jin2008, Du2010, Narasimhan2011,
-  Narasimhan2012, Cao2013, Davoodi2013, Dworak2013, Forte2013,
-  Liu2013, Liu2014, Bao2015}. This research uses power analysis, heat
+analysis to identify the malicious Trojan behavior~\cite{lee2005,
+  agrawal2007, banga2008, banga2008a, jin2008, du2010, narasimhan2011,
+  narasimhan2012, cao2013, davoodi2013, dworak2013, forte2013,
+  liu2013, liu2014, bao2015}. This research uses power analysis, heat
 analysis, or other side-effects to determine that the hardware is
 executing abnormal logic. Unfortunately, this typically requires
 building a model based on a ``golden'' or known-good hardware, which
@@ -226,49 +226,48 @@ which in turn reduces the side-channel behavior of the chip
 significantly. 
 
 Other research has demonstrated the attacks that are possible by
-actually implementing Trojan behavior~\cite{King2008, Jin2010,
-  Sturton2011, Liu2013, Jin2014, Zhang2014}. This line of research
+actually implementing Trojan behavior~\cite{king2008, jin2010,
+  sturton2011, liu2013, jin2014, zhang2014}. This line of research
 shows that Trojan logic is feasible for an attack.
 
 Of particular practical interest is a description of \emph{actual
   Trojan logic} discovered in the ProASIC3 Flash FPGA military
-chip~\cite{Skorobogatov2012}. While in this case it was not proved
+chip~\cite{skorobogatov2012}. While in this case it was not proved
 that the logic introduced to the chip was intentionally malicious,
 nevertheless there existed functionality in the hardware that was
 explicitly denied by the hardware designer. 
 
 Another avenue of research is to change the design of the chip itself,
 in order to improve the testability of the chip or to increase the
-effectiveness of the side-channel analysis~\cite{Chakraborty2008,
-  Li2008, Salmani2009, Hicks2010, Rosenfeld2011, Waksman2011,
-  Bhunia2013, Davoodi2013, Rajendran2013, Rolt2014}. This line of
+effectiveness of the side-channel analysis~\cite{chakraborty2008,
+  li2008, salmani2009, hicks2010, rosenfeld2011, waksman2011,
+  bhunia2013, davoodi2013, rajendran2013, rolt2014}. This line of
 research attempts to rethink designing the hardware itself. However, a
 major drawback is that this can increase the cost of the hardware and
 it must be somehow mandated to be used in COTS components. 
 
 JTAG is a main avenue of reverse engineering hardware, so some work
 has investigated the problem of securing JTAG access to
-hardware~\cite{Rosenfeld2010, Ren2015}. The main idea is to allow only
+hardware~\cite{rosenfeld2010, ren2015}. The main idea is to allow only
 authenticated users to have access to the JTAG functionality, however
 this increases the cost and complexity of implemented JTAG. 
 
 Another approach is to change the design of the chip to support
-runtime monitoring~\cite{Waksman2010}. In this way, the hardware
-itself is monitoring itself, 
-% Sai: can we rephrase this^ ? sounds weird %Faris : Removing the first 'itself' may solve the problem.
+runtime monitoring~\cite{waksman2010}. In this way, the hardware
+is monitoring itself, 
 rather than external analysis of
 side-channels. However, this has all the same drawbacks of changing
 the design of hardware, in addition to not being robust in the face of
 a powerful attacker who is able to alter the design. 
 
 Recent approaches suggest to use machine-learning techniques to
-identify the Trojan logic~\cite{Haider2015}. Another approach attempts
+identify the Trojan logic~\cite{haider2015}. Another approach attempts
 to use a formal verification technique in order to prove that no
-malicious logic was added to the hardware~\cite{Guo2015}.
+malicious logic was added to the hardware~\cite{guo2015}.
 
 Finally, there are several surveys conducted on hardware security,
-which provide a good overview of the field~\cite{Wang2008,
-  Tehranipoor2010, Guin2014, Guin2014a, Guin2014b}.
+which provide a good overview of the field~\cite{wang2008,
+  tehranipoor2010, guin2014, guin2014a, guin2014b}.
 
 Important problems include how to deal with counterfeit chips, better
 non-destructive examination methods, continuous monitoring of the
@@ -462,37 +461,37 @@ firmware/hardware combination.
 \subsection{Research}
 %Faris: Some fixes below. 
 Researchers have attempted to identify real-world attacks on firmware
-code~\cite{Tsow2006, Cui2010, Duflot2011, Basnight2013, Cui2013,
-  Zaddach2013, Zaddach2013a, Maskiewicz2014, Stuttgen2015}. These
+code~\cite{tsow2006, cui2010, duflot2011, basnight2013, cui2013,
+  zaddach2013, zaddach2013a, maskiewicz2014, stuttgen2015}. These
 attacks are particularly effective, and researchers have shown that
 these are able to persist through a reboot and cannot be detected by
 the upper layers. 
 
 Other approaches are about how to prevent the tampering of
-firmware~\cite{Adelstein2002, Zhou2007, Zhou2009}. These protect from
+firmware~\cite{adelstein2002, zhou2007, zhou2009}. These protect from
 the threat of tampering or altering the firmware, however it does not
 address vulnerable firmware. 
 
 Another approach includes runtime monitoring into the
-firmware, so that compromises can be detected~\cite{Cui2010a,
-  Cui2011}. This approach is further complicated by the lack of
+firmware, so that compromises can be detected~\cite{cui2010a,
+  cui2011}. This approach is further complicated by the lack of
 abstractions in the firmware environment. 
 
 Recent work has looked into the problem of updating the design of the
 firmware so that it has security features, such as memory handling and
-avoiding information leakage~\cite{Koeberl2014, Kauer2007}. However,
+avoiding information leakage~\cite{koeberl2014, kauer2007}. However,
 forcing firmware developers to use such features is an open issue.
 
 Very few work has looked into how to reverse engineer and understand the
-firmware~\cite{Zaddach2014}. This problem is of particular interest,
+firmware~\cite{zaddach2014}. This problem is of particular interest,
 as understanding the semantics of the firmware and how it interacts
 with hardware is a key challenge. 
 
 Recent work has looked into how to detect vulnerabilities in
-firmware~\cite{Davidson2013, Costin2014, Shoshitaishvili2015}. One of
+firmware~\cite{davidson2013, costin2014, shoshitaishvili2015}. One of
 these has an excellent website\footnote{\url{http://firmware.re}}
 that contains the results of their reverse engineering and
-vulnerability analysis~\cite{Costin2014}.
+vulnerability analysis~\cite{costin2014}.
 
 \subsection{Suggested Focus Areas}
 %Faris: Some fixes below.
@@ -571,12 +570,12 @@ is difficult in legacy systems.
 A major area of research in the Bus and Interconnect layer is work
 that shows the dangers of a bus and interconnect that allows malicious
 devices to either impersonate devices on the bus or leverage bus
-capabilities, particularly in the automotive area~\cite{Bonkoski2013,
-  Checkoway2011, Hoppe2008, Koscher2010, Rouf2010, Sang2010}.
+capabilities, particularly in the automotive area~\cite{bonkoski2013,
+  checkoway2011, hoppe2008, koscher2010, rouf2010, sang2010}.
 
 The other major area of research is to apply encryption to devices on
-the bus and interconnect~\cite{Groza2012, Herrewege2011, Jiang2012,
-  Schweppe2011, Stewin2014, Szilagyi2010}. In this way, malicious
+the bus and interconnect~\cite{groza2012, herrewege2011, jiang2012,
+  schweppe2011, stewin2014, szilagyi2010}. In this way, malicious
 devices on the bus cannot impersonate other devices. However, a key
 problem with this research direction is how to distribute the keys of
 the devices, which is typically done by distributing them in hardware.
@@ -585,25 +584,25 @@ from accessing the bus and interconnect.
 
 Other research has investigated how to ensure the integrity of devices
 attached to the bus and interconnect using attestation
-techniques~\cite{Li2010, Li2011}. These techniques attempt to ensure
+techniques~\cite{li2010, li2011}. These techniques attempt to ensure
 that only authorized and unmodified devices are attached to the bus
 and interconnect. However, this research has the problem of how to
 allow third-party devices to access the bus.
 
 A key problem is how to perform secure updates to devices attached to
-the bus and the interconnect~\cite{Larson2008}. This is a challenge
+the bus and the interconnect~\cite{larson2008}. This is a challenge
 that also has similarities with the firmware layer.
 
 In order to discover malicious communication, researchers have
 utilized data flow tracking techniques to discover how the data flows
 between devices connect to the bus and interconnect
-layers~\cite{Schweppe2012}. Using these techniques, the researchers
+layers~\cite{schweppe2012}. Using these techniques, the researchers
 are able to identify malicious flows or potential vulnerabilities by
 analyzing the way that data flows throughout the system.
 
 Other researchers have explored modeling either the system itself
-or the behavior of the devices on the bus~\cite{Stewin2013a,
-  Drolia2011}. If the device behavior or the system behavior does not
+or the behavior of the devices on the bus~\cite{stewin2013a,
+  drolia2011}. If the device behavior or the system behavior does not
 match the learned model, then an alert is triggered. In this way,
 these techniques are similar to anomaly detection techniques, with
 similar benefits and drawbacks. 
@@ -612,19 +611,19 @@ In order to address the issue of devices on the bus able to access
 capabilities unauthorized, researchers have tackled the similar
 problem of reducing the Trusted Computing Base, essentially reducing
 the functionality of the bus and interconnect
-layer~\cite{Vasudevan2012, Zhang2013, Zhou2009}. In this way, if the
+layer~\cite{vasudevan2012, zhang2013, zhou2009}. In this way, if the
 functionality is not there on the bus, then a malicious device cannot
 take advantage of it.
 
 Another approach is to leverage hardware features of the underlying
 bus and interconnect system to reduce the impact of an
-attack~\cite{Wolf2012, Wojtczuk2011}. However, as these hardware
+attack~\cite{wolf2012, wojtczuk2011}. However, as these hardware
 functionalities must be implemented, it's impact in legacy systems is
 limited.
 
 Finally, other research in this area has performed surveys of the
-research on this area~\cite{Kleberger2011, Studnia2013, Thom2008,
-  Wolf2004, Wolf2007, Wright2011, Zhao2002}.
+research on this area~\cite{kleberger2011, studnia2013, thom2008,
+  wolf2004, wolf2007, wright2011, zhao2002}.
 
 \subsection{Suggested Focus Areas}
 
@@ -706,11 +705,11 @@ or alter the memory of the guest.
 
 One area of research is to leverage the vantage point of the
 Hypervisor to monitor the guest for security
-violations~\cite{Karger1991, Barham2003}, intrusion
-detections~\cite{Dunlap2002, Garfinkel2003a, Kourai2005, Chen2008,
-  Garfinkel2003b}, checking the integrity of the guest Operating
-system~\cite{Seshadri2006, McCune2010}, and identifying rootkits present
-in the guest Operating System~\cite{Jones2008, Grace2010}. This work
+violations~\cite{karger1991, barham2003}, intrusion
+detections~\cite{dunlap2002, garfinkel2003a, kourai2005, chen2008,
+  garfinkel2003b}, checking the integrity of the guest Operating
+system~\cite{seshadri2006, mccune2010}, and identifying rootkits present
+in the guest Operating System~\cite{jones2008, grace2010}. This work
 assumes that the guest can be compromised and that the Hypervisor is
 trusted, which, due to vulnerabilities in the Hypervisor, is not
 always true.
@@ -719,50 +718,50 @@ A significant problem in monitoring or otherwise inspecting a guest
 Operating System from the hypervisor layer is the \emph{semantic gap}
 problem, where the Hypervisor has no outside knowledge of the
 guest-specific Operating System constructs. Therefore, research has
-investigated how to overcome this semantic gap~\cite{Jones2006,
-  Christodorescu2009, Srinivasan2011}.
+investigated how to overcome this semantic gap~\cite{jones2006,
+  christodorescu2009, srinivasan2011}.
 
 Further work in this line has approached the problem of how to monitor
-the hypervisor itself by leveraging hardware features~\cite{Azab2010}.
+the hypervisor itself by leveraging hardware features~\cite{azab2010}.
 
 In order to build a secure Hypervisor, the lower layers of the
 computing system must also be trusted. Therefore, research into
 establishing a Trusted Computing Base, which validates the integrity
-of the lower levels for the guest Operating System~\cite{Arbaugh1997,
-  Sailer2004, Singaravelu2006} is important for ensuring the security
+of the lower levels for the guest Operating System~\cite{arbaugh1997,
+  sailer2004, singaravelu2006} is important for ensuring the security
 of the Hypervisor.
 
 One problem of using the Hypervisor as a security primitive is that it
 is part of the Trusted Computing Base for the upper layers of the
 computing platform. Therefore, attempts have been made to reduce the
-trusted base of the Hypervisor itself~\cite{Murray2008, Shinagawa2009,
-  Colp2011, Wang2012}.
+trusted base of the Hypervisor itself~\cite{murray2008, shinagawa2009,
+  colp2011, wang2012}.
 
 Other research has looked at creating a secure
-Hypervisor~\cite{Robin2000, Belay2012, Szefer2011, Vasudevan2013} with
+Hypervisor~\cite{robin2000, belay2012, szefer2011, vasudevan2013} with
 the possibility of adding functionality to the Hypervisor to support
-closed guest Operating Systems~\cite{Garfinkel2003}, offering
+closed guest Operating Systems~\cite{garfinkel2003}, offering
 applications running in the guest Operating System to hide information
-from the guest Operating System~\cite{Chen2008, Yang2008, Jin2011,
-  Szefer2012, Azab2011, Zhang2011, Jin2011a, Szefer2011a}, secure
+from the guest Operating System~\cite{chen2008, yang2008, jin2011,
+  szefer2012, azab2011, zhang2011, jin2011a, szefer2011a}, secure
 information flow between the guest Operating System drivers and I/O
-devices~\cite{Cheng2013}, or designing the hypervisor so that it can
+devices~\cite{cheng2013}, or designing the hypervisor so that it can
 prove that it did not tamper with the guest Operating
-System~\cite{Gu2011}.
+System~\cite{gu2011}.
 
 Another approach to improve the security of the Hypervisor is to
 remove the duplicated components from the guest Operating System
-layer~\cite{Kivity2014, Madhavapeddy2015}, which effectively reduces
+layer~\cite{kivity2014, madhavapeddy2015}, which effectively reduces
 the attack surface of the Operating System layer.
 
 Another interesting approach is to run traditional network middleware
 boxes, such as firewalls and Intrusion Detection Systems, as a guest
-Operating System of a Hypervisor~\cite{Martins2014}.
+Operating System of a Hypervisor~\cite{martins2014}.
 
 Finally, there have been attempts to introduce traditional
 application-level security features to Hypervisors, in order to reduce
 or prevent vulnerabilities, such as control-flow
-integrity~\cite{Wang2010} or manual vulnerability
+integrity~\cite{wang2010} or manual vulnerability
 analysis~\cite{Perez-Botero2013}.
 
 \subsection{Focus Areas}
@@ -838,58 +837,58 @@ exploiting a vulnerability in the Operating system.
 
 Research into Operating System security has a long and rich history,
 which has looked at design flaws in Operating
-Systems~\cite{Attanasio1973}. Further research looked at reducing the
+Systems~\cite{attanasio1973}. Further research looked at reducing the
 permissions of the \emph{root} users, essentially compartmentalizing
-the privilege of the Operating System~\cite{Kamp2000, Kurmus2014a}.
+the privilege of the Operating System~\cite{kamp2000, kurmus2014a}.
 
 Rootkits attempt to persist the attacker's compromise of the operating
 system and allow them to hide their malicious behavior from other
 applications on the system. Therefore, rootkit detection is an
 important research topic in Operating System
-security~\cite{Petroni2004, Wang2005, Petroni2007, Payne2008,
-  Sharif2009, Yin2010, Bianchi2012}. Another approach is to prevent
+security~\cite{petroni2004, wang2005, petroni2007, payne2008,
+  sharif2009, yin2010, bianchi2012}. Another approach is to prevent
 the rootkit from altering the Operating System
-kernel~\cite{Riley2008, Wang2009, Grace2010, Gadaleta2011}.
+kernel~\cite{riley2008, wang2009, grace2010, gadaleta2011}.
 
 Vulnerability analysis techniques have been used to discover
 vulnerabilities in the Operating System kernel before a hacker is able
 to use and exploit those vulnerabilities. Static analysis techniques
-have been used~\cite{Chou2001, Chen2011}.
+have been used~\cite{chou2001, chen2011}.
 
 Other vulnerability defenses include defenses for specific
-vulnerability classes, such as buffer overflows~\cite{Dalton2008}.
+vulnerability classes, such as buffer overflows~\cite{dalton2008}.
 Randomization techniques attempt to alter the environment of the
 operating system in such a way that the system continues to function
-but the attacker's exploit fails~\cite{Lin2009, Giuffrida2012}.
+but the attacker's exploit fails~\cite{lin2009, giuffrida2012}.
 Control-flow integrity techniques have been applied to Operating
-System code as well~\cite{Li2011a}.
+System code as well~\cite{li2011a}.
 
 Other research into Operating System security has looked at how to
 protect applications from a malicious or compromised Operating
-System~\cite{Ta-min2006, Onarlioglu2013, Li2014}.
+System~\cite{ta-min2006, onarlioglu2013, li2014}.
 
 % either driver code execute or change `and' to `is'
 As driver code executes in kernel space, and is a frequent source of
-vulnerabilities~\cite{Kadav2012}, researchers have looked into how to
-make drivers more robust~\cite{Ganapathy2008, Hruby2012} or isolated
-from the rest of the kernel~\cite{Boyd-Wickizer2010}.
+vulnerabilities~\cite{kadav2012}, researchers have looked into how to
+make drivers more robust~\cite{ganapathy2008, hruby2012} or isolated
+from the rest of the kernel~\cite{boyd-wickizer2010}.
 
 Attack papers show that it is possible to compromise the kernel
 without injecting any additional code, using Return Oriented
-Programming techniques~\cite{Hund2009}.
+Programming techniques~\cite{hund2009}.
 
 A completely different approach is to formally prove the correctness
-of the Operating System kernel~\cite{Klein2009}.
+of the Operating System kernel~\cite{klein2009}.
 
 Updating Operating Systems with security updates is frequently
 difficult, as the Operating System must be restarted. However,
 researchers have explored how to apply an update to the Operating
-System without rebooting the system~\cite{Arnold2009}.
+System without rebooting the system~\cite{arnold2009}.
 
 Some work has been done on removing the operating system
-entirely~\cite{Madhavapeddy2010} or trimming/tailoring parts of the
-Operating System~\cite{Kurmus2011, Madhavapeddy2013, Howell2013,
-  Kurmus2013, Kurmus2014}. This has the security benefit of reducing
+entirely~\cite{madhavapeddy2010} or trimming/tailoring parts of the
+Operating System~\cite{kurmus2011, madhavapeddy2013, howell2013,
+  kurmus2013, kurmus2014}. This has the security benefit of reducing
 the attack surface of the Operating System.
 
 \subsection{Suggested Focus Areas}
@@ -1025,23 +1024,23 @@ surface, the odds of an attack being able to exploit a
 vulnerability successfully is reduced as well.
 
 Attempts have been made to measure an application's attack
-surface~\cite{Howard2003, Manadhata2007, Manadhata2008, Ruprecht2014}.
+surface~\cite{howard2003, manadhata2007, manadhata2008, ruprecht2014}.
 This has the benefit of attempting to quantify the attack surface of
 an application, which in itself is a difficult problem.
 
 Several research works attempt to reduce the attack surface. Some
 approaches try to statically analyze for deadcode, then restrict the
-execution of the deadcode during runtime~\cite{Kurmus2011}. Other ways
+execution of the deadcode during runtime~\cite{kurmus2011}. Other ways
 attempt to leverage compile-time configurability to reduce the attack
-surface~\cite{Tartler2012, Kurmus2013, Ruprecht2014}. A different
+surface~\cite{tartler2012, kurmus2013, ruprecht2014}. A different
 approach is to reduce the attack surface by partitioning the
-application into different privilege levels~\cite{Barth2010, Xu2012}.
+application into different privilege levels~\cite{barth2010, xu2012}.
 Other approaches attempt to restrict the communication between
 applications, in order to reduce opportunities for the attacker to
-input data to the system~\cite{Kantola2012}.
+input data to the system~\cite{kantola2012}.
 
 Finally, other approaches attempt to quantify the attack surface and
-measure the actual reduction~\cite{Kurmus2014}.
+measure the actual reduction~\cite{kurmus2014}.
 
 \subsubsection{Prevent control-flow hijacking}
 
@@ -1051,7 +1050,7 @@ the application. If an attacker successfully hijacks the control-flow
 of the application, then she has complete control over the execution
 of the application. Many vulnerability classes enable control-flow
 hijacking, specifically memory corruption vulnerabilities such as
-buffer overflows, heap overflows, and format strings~\cite{Szekeres2013}.
+buffer overflows, heap overflows, and format strings~\cite{szekeres2013}.
 
 The goal of this line of research is to prevent the attacker from
 successfully hijacking the control-flow of the application. In this
@@ -1060,32 +1059,32 @@ way, this line of research can be seen as a mitigation technique.
 Significant progress in this area started with the idea of
 control-flow integrity, essentially ensuring dynamically at runtime
 that the control-flow of the application does not
-deviate~\cite{Abadi2005, Abadi2009}. The first implementations were
+deviate~\cite{abadi2005, abadi2009}. The first implementations were
 deemed infeasible, so later research attempted to improve the
-efficiency of control-flow integrity~\cite{Zhang2013, Tice2014,
-  Bletsch2011, Zhang2013, Zhang2013a}
+efficiency of control-flow integrity~\cite{zhang2013, tice2014,
+  bletsch2011, zhang2013, zhang2013a}.
 
 Researchers have advanced the state of attacks against control-flow
 hijacking. The most advanced of these is return-oriented programming
 (ROP), in which an attacker reuses bits of code from the original
 application, so that the attacker can hijack the control-flow of the
-application without introducing new code~\cite{Roemer2012,
-  Bletsch2010, Tran2011}. Researchers have also improved these ROP
-techniques~\cite{Checkoway2010, Buchanan2008, Kayaalp2012, Chen2012,
-  Goktas2014, Schwartz2011} and applied them to a different
-architecture~\cite{Davi2012}.
+application without introducing new code~\cite{roemer2012,
+  bletsch2010, tran2011}. Researchers have also improved these ROP
+techniques~\cite{checkoway2010, buchanan2008, kayaalp2012, chen2012,
+  goktas2014, schwartz2011} and applied them to a different
+architecture~\cite{davi2012}.
 
-Other research has looked at defending ROP attacks~\cite{Pappas2012,
-  Davi2009, Davi2011, Onarlioglu2010, Gupta2013, Pappas2012, Lu2011,
-  Lu2011a, Homescu2012, Gokta2014, Cheng2014, Pappas2013, Snow2013,
-  Hiser2012, Wartell2012} or detecting ROP
-attacks\cite{Polychronakis2011}. Metastudies have looked at the
-effectiveness of these defenses~\cite{Skowyra2013, Schuster2014}.
+Other research has looked at defending ROP attacks~\cite{pappas2012,
+  davi2009, davi2011, onarlioglu2010, gupta2013, pappas2012, lu2011,
+  lu2011a, homescu2012, gokta2014, cheng2014, pappas2013, snow2013,
+  hiser2012, wartell2012} or detecting ROP
+attacks\cite{polychronakis2011}. Metastudies have looked at the
+effectiveness of these defenses~\cite{skowyra2013, schuster2014}.
 
 Finally, other research has shown that even with perfect control-flow
 integrity, due to the impreciseness of statically creating the
 control-flow graph, an attacker can still hijack the control
-flow~\cite{Carlini2015, Schuster2015, Carlini2014, Davi2014}.
+flow~\cite{carlini2015, schuster2015, carlini2014, davi2014}.
 
 \subsubsection{Logic and implementation flaws}
 
@@ -1109,18 +1108,18 @@ classes are.
 Research in logic flaws has typically focused on detecting a certain
 type of logic flaw, rather than detecting logic flaws generally. Early
 work looked at detecting state violations in web
-applications~\cite{Cova2007}.
+applications~\cite{cova2007}.
 
 Other research has looked at preventing access control
 vulnerabilities~\cite{dalton09:nemesis}, or statically detecting
-them~\cite{Sun2011}.
+them~\cite{sun2011}.
 Some research has looked at other types of logic
 flaws, such as
-Privilege escalation vulnerabilities~\cite{Monshizadeh2014}, data disclosure
-vulnerabilities~\cite{Muthukumaran2015}, single sign-on vulnerabilities~\cite{Zhou2014}, and parameter tampering vulnerabilities~\cite{Bisht2010, Bisht2011}.
+Privilege escalation vulnerabilities~\cite{monshizadeh2014}, data disclosure
+vulnerabilities~\cite{muthukumaran2015}, single sign-on vulnerabilities~\cite{zhou2014}, and parameter tampering vulnerabilities~\cite{bisht2010, bisht2011}.
 
 Execution After Redirect is another type of logic flaw
-vulnerability in web applications~\cite{Doupe2011, Payet2013}.
+vulnerability in web applications~\cite{doupe2011, payet2013}.
 
 Work on detecting logic vulnerabilities directly started with
 attempting to infer security specifications of an
@@ -1129,12 +1128,12 @@ execute the application to infer likely invariants, then use static
 analysis to attempt to find paths that violate those
 invariants~\cite{felmetsger10:logic}. Further work tried to find missing
 security (authorization) checks automatically, without prior knowledge
-of the checks~\cite{Son2011, Son2013}.
+of the checks~\cite{son2011, son2013}.
 
 % citation needed here for black-box testing
 Recent work has looked at detecting logic flaw vulnerabilities in web
 applications in a black-box manner---that is, with no knowledge of the
-application's source code~\cite{Pellegrino2014}.
+application's source code~\cite{pellegrino2014}.
 
 
 \subsubsection{Mitigation and recovery}
@@ -1144,18 +1143,18 @@ This subarea of application layer security concentrates on modeling, monitoring,
 
 There has been some research in finding new approaches of test generation for systems. One such approach is Concolic Testing~\cite{sen2007concolic}, which combines symbolic execution with concrete execution of the code being tested.
 
-Research has been made to automatically generate test inputs for Concolic testing (so that all execution paths can be tested) for major languages like C, C++, and Java~\cite{Garg2013, Jayaraman2009, Sen2005}. Other research in this area includes an approach to combine Random testing~\cite{bird1983automatic} with Concolic execution~\cite{Majumdar2007}, automated Concolic testing for smartphone applications~\cite{anand2012automated}, and using Concolic testing in a distributed, scalable way~\cite{kim2012scalable}. There has also been some work on discussing concolic testing tools and their limitations~\cite{Qu2011}.
+Research has been made to automatically generate test inputs for Concolic testing (so that all execution paths can be tested) for major languages like C, C++, and Java~\cite{garg2013, jayaraman2009, sen2005}. Other research in this area includes an approach to combine Random testing~\cite{bird1983automatic} with Concolic execution~\cite{majumdar2007}, automated Concolic testing for smartphone applications~\cite{anand2012automated}, and using Concolic testing in a distributed, scalable way~\cite{kim2012scalable}. There has also been some work on discussing concolic testing tools and their limitations~\cite{qu2011}.
 
-There has been significant research in the area of analysis of an application. Dynamic analysis~\cite{ball1999concept} analyzes the code at run time, and much research in this area has been into Taint-based tracking~\cite{Chang2008}, Anomaly Detection~\cite{Cova2007, li11:BLOCK, Li2012}, Context-sensitive sanitization for popular languages and templating languages~\cite{Saxena2011, Samuel2011}, Binary Analysis~\cite{Song2008}, and Logic vulnerabilities~{\cite{felmetsger10:logic}}. Other work has looked at automated attack generation using model checking~\cite{martin08:goal_directed_mc}, and classifying the available countermeasures for the C and C++ languages~\cite{Younan2012}.
+There has been significant research in the area of analysis of an application. Dynamic analysis~\cite{ball1999concept} analyzes the code at run time, and much research in this area has been into Taint-based tracking~\cite{chang2008}, Anomaly Detection~\cite{cova2007, li11:block, li2012}, Context-sensitive sanitization for popular languages and templating languages~\cite{saxena2011, samuel2011}, Binary Analysis~\cite{song2008}, and Logic vulnerabilities~\cite{felmetsger2010}. Other work has looked at automated attack generation using model checking~\cite{martin08:goal_directed_mc}, and classifying the available countermeasures for the C and C++ languages~\cite{younan2012}.
 
 The other approach to analyze applications is Static Analysis~\cite{cousot1977abstract}, where the code is analyzed at compile time. There has been considerable research in this area, spanning across
 
 \subsubsection{Protection against malicious code}
-One of the more challenging areas of application security is allowing arbitrary code execution without compromising security. There are situations in which applications need to run user provided code, reuse code that was written in a non-type-safe language, or host another program. For instance, browsers running web applications, or apps being uploaded to app stores. To run code safely and make sure that they are not executing malicious code, there are a number of protection mechanisms that can be used, one of which is Sandboxing, also known as Software Fault Isolation (SFI)~\cite{Wahbe1993}. The idea is to run the code in an isolated environment within the application's address space (called fault domain) and then prevent the code from accessing addresses outside that fault domain.
+One of the more challenging areas of application security is allowing arbitrary code execution without compromising security. There are situations in which applications need to run user provided code, reuse code that was written in a non-type-safe language, or host another program. For instance, browsers running web applications, or apps being uploaded to app stores. To run code safely and make sure that they are not executing malicious code, there are a number of protection mechanisms that can be used, one of which is Sandboxing, also known as Software Fault Isolation (SFI)~\cite{wahbe1993}. The idea is to run the code in an isolated environment within the application's address space (called fault domain) and then prevent the code from accessing addresses outside that fault domain.
 
-Early research was focused on rewriting unsafe instructions and providing interfaces for system calls to restrict program's access~\cite{Wahbe1993, Mccamant2006}. Native Client (NaCl)~\cite{Yee2009a} is a sandbox provided by Google that offers x86 untrusted Native code execution in Chrome browser using x86 memory segmentation. Therefore, web developers can leverage the performance of executing native code in a safe environment. Xax~\cite{Douceur2008} is another similar technology that is in form of a browser plug-in that provides an abstraction layer for OS system calls. Other research extends this technology by covering ARM and x86-64~\cite{Zhao2011, Sehr2010, Ansel}. Others attempt to reduce the overhead of performing binary rewriting and memory isolation~\cite{Ford2008, Jana2011}. Sandboxing is also used for executing untrusted native code in Android applications~\cite{Sun2014, Afonso2016}.
+Early research was focused on rewriting unsafe instructions and providing interfaces for system calls to restrict program's access~\cite{wahbe1993, mccamant2006}. Native Client (NaCl)~\cite{yee2009} is a sandbox provided by Google that offers x86 untrusted Native code execution in Chrome browser using x86 memory segmentation. Therefore, web developers can leverage the performance of executing native code in a safe environment. Xax~\cite{douceur2008} is another similar technology that is in form of a browser plug-in that provides an abstraction layer for OS system calls. Other research extends this technology by covering ARM and x86-64~\cite{zhao2011, sehr2010, ansel}. Others attempt to reduce the overhead of performing binary rewriting and memory isolation~\cite{ford2008, jana2011}. Sandboxing is also used for executing untrusted native code in Android applications~\cite{sun2014, afonso2016}.
 
-The other approach toward protecting against malicious code is to analyze the code and detect malicious behavior~\cite{Zhou2012}. Despite all the efforts that have been made to keep malicious apps off the Android market, malicious apps can still find their way into the app store by bypassing the Google Bouncer~\cite{Lockheimer:2012} using different techniques. Bouncer uses sandboxing techniques to run apps in a confined environment, but researchers~\cite{oberheide2012dissecting} have shown that apps can fingerprint Bouncer and the environment in which they are being analyzed, using evasion and obfuscating techniques to complicate the reverse engineering process. If apps could detect that they are being analyzed, they can hold off on running their malicious code while being analyzed. A lot of research has been done to fingerprint the Android analyzers to show that evading detection is possible~\cite{Maier2014, Jing2014, Vidas2014}. Other approaches use analysis to detect logic bombs, i.e., when an application changes its behavior under certain conditions~\cite{Fratantonio2016}.
+The other approach toward protecting against malicious code is to analyze the code and detect malicious behavior~\cite{zhou2012}. Despite all the efforts that have been made to keep malicious apps off the Android market, malicious apps can still find their way into the app store by bypassing the Google Bouncer~\cite{lockheimer:2012} using different techniques. Bouncer uses sandboxing techniques to run apps in a confined environment, but researchers~\cite{oberheide2012dissecting} have shown that apps can fingerprint Bouncer and the environment in which they are being analyzed, using evasion and obfuscating techniques to complicate the reverse engineering process. If apps could detect that they are being analyzed, they can hold off on running their malicious code while being analyzed. A lot of research has been done to fingerprint the Android analyzers to show that evading detection is possible~\cite{maier2014, jing2014, vidas2014}. Other approaches use analysis to detect logic bombs, i.e., when an application changes its behavior under certain conditions~\cite{fratantonio2016}.
 
 \subsection{Focus Areas}
 
