@@ -1,0 +1,10 @@
+#!/bin/sh
+# To install this script,
+# run: chmod 755 pre-commit
+# run ln -s pre-commit .git/hooks/pre-commit
+# now whenever you commit, make clean will be run
+# automatically, so even if you forget to run it,
+# itll not be a problem
+make clean
+git add .
+git status
