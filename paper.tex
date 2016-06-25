@@ -849,7 +849,7 @@ important research topic in Operating System
 security~\cite{Petroni2004, Wang2005, Petroni2007, Payne2008,
   Sharif2009, Yin2010, Bianchi2012}. Another approach is to prevent
 the rootkit from altering the Operating System
-kernel~\cite{Riley2008a, Wang2009, Grace2010, Gadaleta2011}.
+kernel~\cite{Riley2008, Wang2009, Grace2010, Gadaleta2011}.
 
 Vulnerability analysis techniques have been used to discover
 vulnerabilities in the Operating System kernel before a hacker is able
@@ -1137,7 +1137,6 @@ applications in a black-box manner---that is, with no knowledge of the
 application's source code~\cite{Pellegrino2014}.
 
 
-
 \subsubsection{Mitigation and recovery}
 
 \subsubsection{Modeling and monitoring execution}
@@ -1147,7 +1146,7 @@ There has been some research in finding new approaches of test generation for sy
 
 Research has been made to automatically generate test inputs for Concolic testing (so that all execution paths can be tested) for major languages like C, C++, and Java~\cite{Garg2013, Jayaraman2009, Sen2005}. Other research in this area includes an approach to combine Random testing~\cite{bird1983automatic} with Concolic execution~\cite{Majumdar2007}, automated Concolic testing for smartphone applications~\cite{anand2012automated}, and using Concolic testing in a distributed, scalable way~\cite{kim2012scalable}. There has also been some work on discussing concolic testing tools and their limitations~\cite{Qu2011}.
 
-There has been significant research in the area of analysis of an application. Dynamic analysis~\cite{ball1999concept} analyzes the code at run time, and much research in this area has been into Taint-based tracking~\cite{Chang2008}, Anomaly Detection~\cite{Cova2007, li11:BLOCK, Li2012}, Context-sensitive sanitization for popular languages and templating languages~\cite{Saxena2011, Samuel2011}, and Binary Analysis~\cite{Song2008}. Other work has looked at automated attack generation using model checking~\cite{martin08:goal_directed_mc}, and classifying the available countermeasures for the C and C++ languages~\cite{Younan2012}.
+There has been significant research in the area of analysis of an application. Dynamic analysis~\cite{ball1999concept} analyzes the code at run time, and much research in this area has been into Taint-based tracking~\cite{Chang2008}, Anomaly Detection~\cite{Cova2007, li11:BLOCK, Li2012}, Context-sensitive sanitization for popular languages and templating languages~\cite{Saxena2011, Samuel2011}, Binary Analysis~\cite{Song2008}, and Logic vulnerabilities~{\cite{felmetsger10:logic}}. Other work has looked at automated attack generation using model checking~\cite{martin08:goal_directed_mc}, and classifying the available countermeasures for the C and C++ languages~\cite{Younan2012}.
 
 The other approach to analyze applications is Static Analysis~\cite{cousot1977abstract}, where the code is analyzed at compile time. There has been considerable research in this area, spanning across
 
