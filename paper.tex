@@ -1136,14 +1136,16 @@ application's source code~\cite{pellegrino2014}.
 
 
 \subsubsection{Mitigation and recovery}
-
+%% Additions and changes made.
 Mitigation and recovery is of major concern when it comes to application and systems security. This area of research is important because recovery of a tainted system is the first concern post attack or exploitation.
 
-Researchers have found some VM-based approaches in order to recover from intrusions.~\cite{zhang2009b} suggest one such approach. They try to achieve recovery in three phases, Routine execution phase, Damage assessment phase and Recovery phase. This framework tries to log pre-attack states and system calls and takes forward or reverse taint-tracking approach. Recovery phase tries to Quarantine the malicious files and objects identified during the Damage assessment.
+Researchers have found some Virtual Machine based approaches in order to recover from intrusions.~\cite{zhang2009b} suggest one such approach. They try to achieve recovery in three phases, Routine execution phase, Damage assessment phase and Recovery phase. This framework tries to log pre-attack states and system calls and takes forward or reverse taint-tracking approach. Recovery phase tries to Quarantine the malicious files and objects identified during the Damage assessment.
 
-A similar VM-based approach is taken in~\cite{oliveria2008b}. The Bezoar framework proposed in this paper tries to recover a system based on monitoring of propagation bytes in the system after hijacking attack has been detected. The framework replays the checkpointed run while ignoring inputs from malicious sources.
+A similar VM-based approach is taken in~\cite{oliveria2008b}. The Bezoar framework proposed in this paper recovers a system based on monitoring of propagation bytes in the system after hijacking attack has been detected. The framework replays the checkpointed run while ignoring inputs from malicious sources. Checkpointing methodolgy is also used in ExecRecorder[cite], which works on the idea of lod-based recovery. They propose a method to checkpoint system states and logging nondeterministic events. Recovery of the system is achieved by replaying the execution post attack and based on the log generated the system mitigates the attack execution during the reply.
 
-Automated intrusion recovery system is proposed in~\cite{goel2005b}. Researchers have designed automated resolution policies which determines set of tainted files. Taser recovery system~\cite{goel2005b}, is designed based on following models. Recovery model, Audito, Analyzer and Resolver. Techniques like naming conventions and file permissions, logging of all events, dependency of files, process and sockets are used by Taser in order to analyze intrusion. Similar to Recovery phase approach taken in~\cite{zhang2009b}, Taser uses the Resolver model proposed to go back to the state of the operating system before intrusion.
+Recovering programs from software bugs is also a method proposed for mitigation of software failures. Rx~\cite{qin2007} thoroughly explains a method based on checkpoiting to detect and recover from software bugs.  This framework detects software bugs in a program using sensors and once the bug is detected mitigation is done by changing the the execution environment dynamically. They have tabulated results displaying the mitigation of software bugs such as buffer overflow and stack overflow.
+
+Automated intrusion recovery system is proposed in~\cite{goel2005b}. Researchers have designed automated resolution policies which determines set of tainted files. Taser recovery system~\cite{goel2005b} is designed based on following models. Recovery model, Auditor, Analyzer and Resolver. Techniques like naming conventions and file permissions, logging of all events, dependency of files, process and sockets are used by Taser in order to analyze intrusion. Similar to Recovery phase approach taken in~\cite{zhang2009b}, Taser uses the Resolver model proposed to go back to the state of the operating system before intrusion.
 
 The research in this area of mitigation and recovery is majorly done taking the VM-based approach in consideration. 
 

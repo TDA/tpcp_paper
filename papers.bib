@@ -9860,6 +9860,22 @@ url = {http://portal.acm.org/citation.cfm?id=1095810.1095826},
 year = {2005}
 }
 
+@Article{qin2007,
+abstract = {Many applications demand availability. Unfortunately, software failures greatly reduce system availability. Prior work on surviving software failures suffers from one or more of the following limitations: required application restructuring, inability to address deterministic software bugs, unsafe speculation on program execution, and long recovery time. This paper proposes an innovative safe technique, called Rx, which can quickly recover programs from many types of software bugs, both deterministic and nondeterministic. Our idea, inspired from allergy treatment in real life, is to rollback the program to a recent checkpoint upon a software failure, and then to reexecute the program in a modified environment. We base this idea on the observation that many bugs are correlated with the execution environment, and therefore can be avoided by removing the “allergen” from the environment. Rx requires few to no modifications to applications and provides programmers with additional feedback for bug diagnosis. We have implemented Rx on Linux. Our experiments with five server applications that contain seven bugs of various types show that Rx can survive six out of seven software failures and provide transparent fast recovery within 0.017--0.16 seconds, 21--53 times faster than the whole program restart approach for all but one case (CVS). In contrast, the two tested alternatives, a whole program restart approach and a simple rollback and reexecution without environmental changes, cannot successfully recover the four servers (Squid, Apache, CVS, and ypserv) that contain deterministic bugs, and have only a 40{\%} recovery rate for the server (MySQL) that contains a nondeterministic concurrency bug. Additionally, Rx's checkpointing system is lightweight, imposing small time and space overheads},
+author = {Qin, Feng and Tucek, Joseph and Zhou, Yuanyuan and Sundaresan, Jagadeesan},
+doi = {10.1145/1275517.1275519},
+isbn = {1595930795},
+issn = {07342071},
+journal = {ACM Transactions on Computer Systems},
+keywords = {Availability,Bug,Reliability,Software Failure},
+mendeley-groups = {6 - Application/Mitigation and recovery},
+number = {3},
+pages = {7--es},
+title = {{Rx}},
+url = {http://portal.acm.org/citation.cfm?doid=1275517.1275519},
+volume = {25},
+year = {2007}
+}
 
 
 
